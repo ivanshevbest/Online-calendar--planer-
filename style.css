@@ -1,0 +1,208 @@
+/* Основной стиль для тела страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://avatars.mds.yandex.net/i?id=4c6231f4f7e44b65bd034b0b71c33326d9bc5ef2-9459492-images-thumbs&n=13');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Стиль для календаря */
+.calendar {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовок календаря */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.calendar-header h2 {
+    margin: 0;
+    color: #FF00FF;
+}
+
+/* Кнопки переключения месяцев */
+.calendar-header button {
+    color: #0000FF;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Дни недели */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.weekdays div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    color: #000;
+}
+
+/* Тело календаря */
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    flex-grow: 1;
+}
+
+/* Обычный день */
+.day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;   /* <-- важно для позиционирования событий */
+    color: #000;
+}
+.day:hover {
+    background-color: #e0e0e0;
+}
+
+/* Текущий день */
+.today {
+    background-color: #ffd700;   /* желтый */
+}
+
+/* Выходные */
+.day.saturday,
+.day.sunday {
+    color: #FF0000;
+}
+
+/* События */
+.event {
+    background-color: #ffff00;   /* **по умолчанию желтый** */
+    color: #000;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+/* События‑дни рождения */
+.event.dr {
+    background-color: #FF0000;   /* красный */
+}
+
+/* События‑встречи */
+.event.meeting {
+    background-color: #0000FF;   /* синий */
+}
+
+/* События‑остальное (если нужен отдельный стиль) */
+.event.other {
+    background-color: #ffff00;   /* желтый (можно убрать, т.к. .event уже желтый) */
+}
+
+/* Поле ввода события */
+.event-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Кнопка добавления события */
+#add-event {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+#add-event:hover {
+    background-color: #45a049;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 600px) {
+    .calendar { width: 100%; }
+    .weekdays div,
+    .day,
+    .event { font-size: 12px; }
+}
+
+/* Поля ввода времени */
+#event-start-time,
+#event-end-time {
+    color: #000;
+}
+
+/* Водяной знак */
+.watermark {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: #999;
+    opacity: 0.6;
+}
+
+/* Основной стиль для тела страницы */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://avatars.mds.yandex.net/i?id=4c6231f4f7e44b65bd034b0b71c33326d9bc5ef2-9459492-images-thumbs&n=13');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background-image 1s ease; /* Добавляем плавный переход */
+}
+
+/* Стиль для кнопки отключения фона */
+#toggle-background {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      background: linear-gradient(to right, #6a11cb, #2575fc); /* Градиентный фон */
+      transition: background 0.3s ease; /* Плавный переход при наведении */
+}
+
+#toggle-background:hover {
+      background: linear-gradient(to right, #2575fc, #6a11cb); /* Изменение градиента при наведении */
+}
+
+
+
