@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Онлайн календарь- планер</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calendar">
+        <div class="calendar-header">
+            <h2 id="month-year"></h2>
+            <div>
+                <button id="prev-month">←</button>
+                <button id="next-month">→</button>
+            </div>
+        </div>
+
+        <div class="weekdays">
+            <div>Пн</div>
+            <div>Вт</div>
+            <div>Ср</div>
+            <div>Чт</div>
+            <div>Пт</div>
+            <div>Сб</div>
+            <div>Вс</div>
+        </div>
+
+        <div class="calendar-body" id="calendar-body"></div>
+
+        <!-- Поля ввода события -->
+        <input type="text" id="event-input" class="event-input" placeholder="Введите событие">
+
+        <!-- Выбор категории -->
+        <select id="category-select" class="event-input">
+            <option value="dr">День рождения</option>
+            <option value="meeting">Встреча</option>
+            <option value="other">Остальное</option>
+        </select>
+
+        <button id="add-event">Добавить событие</button>
+
+        <div id="event-details" style="display: none;">
+            <label for="event-start-time">Время начала:</label>
+            <input type="time" id="event-start-time">
+            <label for="event-end-time">Время окончания:</label>
+            <input type="time" id="event-end-time">
+            <button id="confirm-event">Подтвердить</button>
+        </div>
+    </div>
+
+    <button id="toggle-background">Отключить переключение фона</button>
+
+    <script src="index.js"></script>
+
+    <div class="watermark">© Вахрушев И.Г. 2026 г.</div>
+</body>
+</html>
